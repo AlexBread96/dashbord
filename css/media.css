@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+
+    /*----------- Header -----------*/
+    .page-header {
+        padding: 0 24px;
+    }
+
+    .page-header__description {
+        margin-left: 8px;
+    }
+
+    /*------------ Dashboard -------------*/
+    .tests-list {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    .test {
+        width: 280px;
+    }
+
+    .test-diagram--small {
+        width: 50px;
+        height: 50px;
+    }
+
+    .test-diagram--small::before {
+        width: 50px;
+        height: 50px;
+    }
+
+    .test-diagram--small::after {
+        width: 50px;
+        height: 50px;
+    }
+
+    .test-diagram__description--small {
+        width: 60px;
+    }
+
+    .test-diagram__number--small {
+        font-size: 16px;
+    }
+}

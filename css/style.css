@@ -1,0 +1,307 @@
+/*----------- General -----------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap'); 
+
+body {
+    font-family: 'NotoSans', 'Arial', sans-serif;
+    font-weight: 400;
+    background-color: #F7F8F7;
+    color: #1B1B1C;
+    padding: 0;
+    margin: 0 auto;
+    font-size: 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100vh;
+  }
+
+  @media (min-width: 768px){
+    body {
+      width: 768px;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0 auto;
+    -webkit-padding-start: 0px;
+            padding-inline-start: 0px;
+  }
+
+
+
+/*----------- Header -----------*/
+.page-header {
+    background-color: #fff;
+    border-radius: 0 0 40px 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    min-height: 75px;
+    padding: 0 32px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.page-header__logo {
+    height: 40px;
+    width: auto;
+}
+
+.page-header__description {
+    font-weight: 400;
+    font-size: 14px;
+    opacity: .5;
+    text-align: right;
+}
+
+/*----------- Test Result -----------*/
+.test-result {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-row-align: center;
+        align-self: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+}
+
+.test-diagram {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    margin: 5px;
+    width: 280px;
+    height: 280px;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+  -ms-grid-column-span: -2;
+  grid-column-end: -1;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  -ms-grid-row-span: -2;
+  grid-row-end: -1;
+}
+
+.test-diagram__description {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-column-span: -2;
+    grid-column-end: -1;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    -ms-grid-row-span: -2;
+    grid-row-end: -1;
+}
+
+.test-diagram__percent {
+    text-align: center;
+    width: 150px;
+}
+
+.test-diagram::before {
+    content: "";
+    position: absolute;
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--diagram-color) calc(var(--percentage)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - 4px),#000 calc(100% - 4px));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - 4px),#000 calc(100% - 4px));
+}
+
+.test-diagram::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    margin: 0 auto;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(#D9D9D9 calc(100*100%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - 4px),#000 calc(100% - 4px));
+            mask:radial-gradient(farthest-side,#0000 calc(99% - 4px),#000 calc(100% - 4px));
+}
+
+.test-diagram__description {
+    text-align: center;
+}
+
+.test-diagram__number {
+    font-size: 48px;
+    font-weight: 700;
+}
+
+
+
+/*----------- Button -----------*/
+.button{
+    display: block;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    color: #1B1B1C;
+}
+
+.button::before {
+    content: '';
+    display: inline-block;
+    background-size: cover;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.button--dashboard::before {
+    background-image: url(../img/dashboard.svg);
+    width: 23px;
+    height: 16px;
+}
+
+.button--new::before {
+    background-image: url(../img/play.svg);
+    width: 16px;
+    height: 15px;
+}
+
+.button--restart::before {
+    background-image: url(../img/refresh.svg);
+    width: 18px;
+    height: 18px;
+}
+
+.button--done::before {
+    background-image: url(../img/check.svg);
+    width: 18px;
+    height: 18px;
+}
+
+.button--done {
+    opacity: .2;
+}
+
+
+
+/*----------- Test result description (footer) -----------*/
+.test-result-description {
+    background-color: #fff;
+    border-radius: 40px 40px 0 0;
+    -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+}
+
+.test-result-description__text {
+    text-align: left;
+    padding-bottom: 50px;
+}
+
+
+/*------------ Dashboard -------------*/
+
+.tests-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 12px;
+    height: inherit;
+    padding: 20px 0;
+}
+
+.test {
+    width: 310px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 30px;
+    -webkit-filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
+            filter: drop-shadow(0px 0px 30px rgba(0, 0, 0, 0.1));
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 14px 8px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 8px;
+}
+
+.test-diagram--small {
+    width: 70px;
+    height: 70px;
+}
+
+.test-diagram--small::before {
+    width: 70px;
+    height: 70px;
+}
+
+.test-diagram--small::after {
+    width: 70px;
+    height: 70px;
+}
+
+.test-diagram__number--small {
+    font-size: 20px;
+}
+
+.test-diagram__description--small {
+    width: 80px;
+}
+
+.test__description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 8px;
+}
+
+.test--disable {
+    background-color: #0000;
+}
+
+.test-result--new {
+    opacity: .3;
+}
