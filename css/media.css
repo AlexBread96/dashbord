@@ -40,6 +40,10 @@
     }
 
     /*----------- Test Result -----------*/
+    .page-body .test-diagram {
+        margin: 16px 0;
+    }
+
     .page-body .test-diagram,
     .page-body .test-diagram::before,
     .page-body .test-diagram::after {

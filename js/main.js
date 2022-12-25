@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   const link = location.href;
   let maxScore = 7;
-  let btnLink, score, percantage, curentValue;
-  console.log(link);
-  console.log(link.slice(link.indexOf("last") + 5));
+  let btnLink, score, percantage, curentValue; 
 
   function parceLink() {
     curentValue = link.slice(link.indexOf("last") + 5);
@@ -25,11 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }`;
     percantage = score.map((element) =>
       Math.round(((100 / maxScore) * element).toFixed(2))
-    );
-    console.log(score);
-    console.log(btnLink);
-    console.log(curentValue);
-    console.log(percantage);
+    ); 
   }
 
   function createResult(items) {
@@ -47,8 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
       `;
     });
-    $testResult.innerHTML = item;
-    console.log(location.pathname);
+    $testResult.innerHTML = item; 
     $buttonToDashboard.setAttribute(
       "href",
       location.origin + location.pathname + "dashboard.html" + btnLink
