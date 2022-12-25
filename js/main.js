@@ -48,9 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     });
     $testResult.innerHTML = item;
+    console.log(location.pathname);
     $buttonToDashboard.setAttribute(
       "href",
-      location.origin + "/dashboard.html" + btnLink
+      location.origin + location.pathname + "dashboard.html" + btnLink
     );
   }
 
