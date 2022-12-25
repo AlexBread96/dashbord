@@ -1,7 +1,7 @@
 @media (max-width: 768px) {
-    
+
     body {
-     font-size: 14px;
+        font-size: 14px;
     }
 
     /*----------- Header -----------*/
@@ -24,17 +24,9 @@
         width: 280px;
     }
 
-    .test-diagram--small {
-        width: 50px;
-        height: 50px;
-    }
-
+    .test-diagram--small,
+    .test-diagram--small::after,
     .test-diagram--small::before {
-        width: 50px;
-        height: 50px;
-    }
-
-    .test-diagram--small::after {
         width: 50px;
         height: 50px;
     }
@@ -45,5 +37,13 @@
 
     .test-diagram__number--small {
         font-size: 16px;
+    }
+
+    /*----------- Test Result -----------*/
+    .page-body .test-diagram,
+    .page-body .test-diagram::before,
+    .page-body .test-diagram::after {
+        width: 210px;
+        height: 210px;
     }
 }
