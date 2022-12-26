@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .filter((el) => el !== "")
       .map((el) => (+el > maxScore ? maxScore : +el))
       .filter((el, idx) => idx === (curentValue > 5 ? 4 : curentValue - 1));
-
-    fillArr(score);
+ 
     btnLink = `?${link.slice(link.indexOf("fi")).split("&")[0]}&${
       link.slice(link.indexOf("score")).split("&")[0]
     }`;
@@ -64,13 +63,5 @@ document.addEventListener("DOMContentLoaded", function () {
       return colors.red;
     }
   }
-
-  function fillArr(arr) {
-    if (arr.length < 5) {
-      arr.push(0);
-      fillArr(arr);
-    } else {
-      return;
-    }
-  }
+ 
 });
