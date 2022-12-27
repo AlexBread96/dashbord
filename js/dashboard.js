@@ -47,9 +47,6 @@ document.addEventListener("DOMContentLoaded", function () {
   parseLink(link);
   if (link.indexOf("score") !== -1) {
     createTestItem(score);
-    score.forEach((el, i) => {
-      [...$testsList.querySelectorAll(".button").setAttribute()];
-    });
   }
   function getColor(idx, array) {
     let val = array[idx];

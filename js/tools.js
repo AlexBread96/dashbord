@@ -12,13 +12,7 @@ const dsc = {
   predone: "Conflicto",
   postNone: "Viaje",
   none: "Terminacion del viaje",
-};
-
-// const btns = {
-//   done: '<a class="button button--done">Puntaje máximo</a>',
-//   restart: '<a class="button button--restart" href=" ">Reiniciar el caso</a>',
-//   start: '<a class="button button--new" href=" ">Iniciar el caso</a>',
-// };
+}; 
 
 const btns = {
   done: {
