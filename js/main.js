@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const $buttonToDashboard = document.querySelector(
     ".button.button--dashboard"
   );
-  const link = location.href;
-  let maxScore = 7;
-  let btnLink, score, percantage, curentValue; 
+  const link = location.href; 
+  let maxScores = [7, 21, 11, 9, 7];
+  let btnLink, score, percantage, curentValue;
 
   function parceLink() {
     curentValue = link.slice(link.indexOf("last") + 5);
@@ -14,15 +14,17 @@ document.addEventListener("DOMContentLoaded", function () {
       .split("&")[0]
       .split("_")
       .filter((el) => el !== "")
-      .map((el) => (+el > maxScore ? maxScore : +el))
+      .map((el, idx) => (+el > maxScores[idx] ? maxScores[idx] : +el))
       .filter((el, idx) => idx === (curentValue > 5 ? 4 : curentValue - 1));
- 
+    maxScores = maxScores.filter(
+      (el, idx) => idx === (curentValue > 5 ? 4 : curentValue - 1)
+    );
     btnLink = `?${link.slice(link.indexOf("fi")).split("&")[0]}&${
       link.slice(link.indexOf("score")).split("&")[0]
     }`;
-    percantage = score.map((element) =>
-      Math.round(((100 / maxScore) * element).toFixed(2))
-    ); 
+    percantage = score.map((element, i) =>
+      Math.round(((100 / maxScores[i]) * element).toFixed(2))
+    );
   }
 
   function createResult(items) {
@@ -33,14 +35,14 @@ document.addEventListener("DOMContentLoaded", function () {
         percantage[i]
       }; --diagram-color:${getColor(i, percantage)};;"></div>
       <div class="test-diagram__description">
-        <p class="test-diagram__number">${el}/${maxScore}</p>
+        <p class="test-diagram__number">${el}/${maxScores[i]}</p>
         <p class="test-diagram__percent">${
           percantage[i]
         }% respuestas correctas</p>
       </div>
       `;
     });
-    $testResult.innerHTML = item; 
+    $testResult.innerHTML = item;
     $buttonToDashboard.setAttribute(
       "href",
       location.origin + location.pathname + "dashboard.html" + btnLink
@@ -63,5 +65,4 @@ document.addEventListener("DOMContentLoaded", function () {
       return colors.red;
     }
   }
- 
 });
