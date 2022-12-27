@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   $testsList = document.querySelector(".tests-list");
 
-  const link = location.href; 
+  const link = location.href;
   const maxScores = [7, 21, 11, 9, 7];
 
   let testsItems = [];
@@ -28,12 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 percantage[i]
               }; --diagram-color:${getColor(i, percantage)};"></div>
               <div class="test-diagram__description test-diagram__description--small">
-                 <p class="test-diagram__number test-diagram__number--small">${el}/${maxScores[i]}</p>
+                 <p class="test-diagram__number test-diagram__number--small">${el}/${
+        maxScores[i]
+      }</p>
               </div>
           </section>
           <section class="test__description">
               <p class="test__header">${getDsc(i, score)}</p>
-              ${getBtn(i, score)}
+              <a class="button ${getBtn(i, score).class}" href="${
+        refLenks[i]
+      }"> ${getBtn(i, score).text}</a>
+          
           </section>
       </li>`);
       $testsList.innerHTML += testsItems[i];
@@ -42,6 +47,9 @@ document.addEventListener("DOMContentLoaded", function () {
   parseLink(link);
   if (link.indexOf("score") !== -1) {
     createTestItem(score);
+    score.forEach((el, i) => {
+      [...$testsList.querySelectorAll(".button").setAttribute()];
+    });
   }
   function getColor(idx, array) {
     let val = array[idx];
@@ -83,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       return btns.start;
     } else {
-      return "";
+      return btns.none;
     }
   }
   function fillArr(arr) {

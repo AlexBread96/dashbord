@@ -14,9 +14,35 @@ const dsc = {
   none: "Terminacion del viaje",
 };
 
+// const btns = {
+//   done: '<a class="button button--done">Puntaje máximo</a>',
+//   restart: '<a class="button button--restart" href=" ">Reiniciar el caso</a>',
+//   start: '<a class="button button--new" href=" ">Iniciar el caso</a>',
+// };
+
 const btns = {
-  done: '<a class="button button--done">Puntaje máximo</a>',
-  restart: '<a class="button button--restart" href=" ">Reiniciar el caso</a>',
-  start: '<a class="button button--new" href=" ">Iniciar el caso</a>',
-  none: '<a class="button button--done"> </a>',
+  done: {
+    class: "button--done",
+    text: "Puntaje máximo",
+  },
+  restart: {
+    class: "button--restart",
+    text: "Reiniciar el caso",
+  },
+  start: {
+    class: "button--new",
+    text: "Iniciar el caso",
+  },
+  none: {
+    class: "",
+    text: "",
+  },
 };
+
+const refLenks = [
+  "https://m.me/driver.challenge?ref=w17961115",
+  "https://m.me/driver.challenge?ref=w18011823",
+  "https://m.me/driver.challenge?ref=w18012953",
+  "https://m.me/driver.challenge?ref=w18080423",
+  "https://m.me/driver.challenge?ref=w18085731",
+];
