@@ -3,12 +3,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const $buttonToDashboard = document.querySelector(
     ".button.button--dashboard"
   );
-  const link = location.href; 
+  const link = location.href;
   let maxScores = [7, 21, 11, 9, 7];
-  let btnLink, score, percantage, curentValue;
-
+  let btnLink, score, percantage, curentValue; 
   function parceLink() {
-    curentValue = link.slice(link.indexOf("last") + 5);
+    curentValue = link.slice(link.indexOf("last") + 5).split("&")[0];
     score = link
       .slice(link.indexOf("score") + 6)
       .split("&")[0]
