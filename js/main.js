@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     $testResult.innerHTML = item;
     $buttonToDashboard.setAttribute(
       "href",
-      location.origin + location.pathname + "dashboard.html" + btnLink
+      location.origin + "/" + "dashboard.html" + btnLink
     );
   }
 
