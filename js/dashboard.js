@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .split("_")
       .filter((el) => el !== "" && !isNaN(+el))
       .map((el, idx) => (+el > maxScores[idx] ? maxScores[idx] : +el));
-    fillArr(score);
-    console.log(score);
+    fillArr(score); 
     percantage = score.map((element, idx) =>
       Math.round(((100 / maxScores[idx]) * element).toFixed(2))
     );

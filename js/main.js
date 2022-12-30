@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   const link = location.href;
   let maxScores = [7, 21, 11, 9, 7];
-  let btnLink, score, percantage, curentValue; 
+  let btnLink, score, percantage, curentValue;
   function parceLink() {
     curentValue = link.slice(link.indexOf("last") + 5).split("&")[0];
     score = link
@@ -44,10 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
     $testResult.innerHTML = item;
     $buttonToDashboard.setAttribute(
       "href",
-      location.origin + "/" + "dashboard.html" + btnLink
+      location.origin + location.pathname == "index"
+        ? "/"
+        : location.pathname + "dashboard.html" + btnLink
     );
   }
-
+  // location.pathname
   parceLink();
   createResult(score);
   function getColor(idx, array) {
